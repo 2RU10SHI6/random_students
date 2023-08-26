@@ -42,14 +42,18 @@ function reset(n = false){
 
 function edit(a){
     let n = parseInt(a);
-    if(students.indexOf(n) === -1){
-        //追加
-        students.push(n);
-        alert("対象生徒に" + n + "番を追加しました。");
+    if(isNaN(n)){
+        alert("エラー：対象生徒を追加・削除する際は数字を半角で入力してください。");
     }else{
-        //削除
-        students.splice(students.indexOf(n), 1);
-        alert("対象生徒から" + n + "番を削除しました。")
+        if(students.indexOf(n) === -1){
+            //追加
+            students.push(n);
+            alert("対象生徒に" + n + "番を追加しました。");
+        }else{
+            //削除
+            students.splice(students.indexOf(n), 1);
+            alert("対象生徒から" + n + "番を削除しました。")
+        }
     }
     document.getElementById("edit_input").value = null;
     display.innerText = students.join(" ");
@@ -57,14 +61,18 @@ function edit(a){
 
 function default_edit(a){
     let n = parseInt(a);
-    if(defaults.indexOf(n) === -1){
-        //追加
-        defaults.push(n);
-        alert("初期設定上の対象生徒に" + n + "番を追加しました。");
+    if(isNaN(n)){
+        alert("エラー：初期設定上の生徒を追加・削除する際は数字を半角で入力してください。");
     }else{
-        //削除
-        defaults.splice(defaults.indexOf(n), 1);
-        alert("初期設定上の対象生徒から" + n + "番を削除しました。")
+        if(defaults.indexOf(n) === -1){
+            //追加
+            defaults.push(n);
+            alert("初期設定上の対象生徒に" + n + "番を追加しました。");
+        }else{
+            //削除
+            defaults.splice(defaults.indexOf(n), 1);
+            alert("初期設定上の対象生徒から" + n + "番を削除しました。")
+        }
     }
     document.getElementById("default_edit_input").value = null;
     default_.innerText = defaults.join(" ");
