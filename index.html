@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ランダムに生徒を当てるくん</title>
+</head>
+<body>
+    <h1>ランダムに生徒を当てるくん</h1>
+
+    <p>指名対象生徒</p>
+    <div id="display"></div>
+
+    <div id="selected"></div>
+
+    <button class="buttons" id="select" onclick="select()">指名</button>
+    <button class="buttons" id="reset" onclick="reset()">リセット</button>
+
+    <br><br><br><br>
+
+    <p>対象生徒の追加・削除</p>
+    <div class="edit">
+        <input id="edit_input"><button onclick="edit(document.getElementById('edit_input').value)">更新</button>
+    </div>
+
+    <br><br><br><br><br><br><br>
+
+    <p>生徒の初期設定</p>
+    <div id="default"></div>
+
+    <br>
+
+    <p>初期設定上の生徒の追加・削除</p>
+    <div class="default_edit">
+        <input id="default_edit_input"><button onclick="default_edit(document.getElementById('default_edit_input').value)">更新</button>
+        <button id="edit_reset" onclick="reset()">リセット</button>
+    </div>
+    <p style="font-size: 15px;">初期設定終了後はリセットを行ってください。<br>起動後は設定が指名対象生徒に反映されていません。</p>
+
+    <script src="script.js"></script>
+</body>
+</html>
